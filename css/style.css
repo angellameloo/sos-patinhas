@@ -1192,3 +1192,58 @@ img {
     }
 
 }
+/* =========================================================
+   MENSAGEM DO SISTEMA
+   ========================================================= */
+
+.mensagem-sos {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: var(--dark);
+    color: var(--white);
+
+    padding: 14px 20px;
+
+    border-radius: 12px;
+
+    box-shadow: var(--shadow);
+
+    font-size: 0.9rem;
+
+    opacity: 0;
+    transform: translateY(20px);
+
+    transition: 0.3s ease;
+}
+
+
+.mensagem-sos.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.mensagem-sos i {
+    color: var(--secondary);
+    font-size: 1.1rem;
+}
+
+
+@media (max-width: 480px) {
+
+    .mensagem-sos {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+    }
+
+}
