@@ -1,67 +1,4 @@
-<main class="favorites-content">
-
-    <div class="container">
-
-        <div class="favorites-counter">
-
-            <div>
-
-                <h2>Meus animais favoritos</h2>
-
-                <span id="counterText"></span>
-
-            </div>
-
-            <a
-                href="animais.html"
-                class="btn btn-primary"
-            >
-                <i class="bi bi-search"></i>
-                Encontrar animais
-            </a>
-
-        </div>
-
-
-        <div
-            class="row g-4"
-            id="favoritesList"
-        ></div>
-
-
-        <div
-            id="emptyFavorites"
-            class="empty-favorites"
-            style="display: none;"
-        >
-
-            <div class="empty-icon">
-
-                <i class="bi bi-heart"></i>
-
-            </div>
-
-            <h2>
-                Você ainda não tem favoritos
-            </h2>
-
-            <p>
-                Clique no coração de um animal para
-                adicioná-lo aos seus favoritos.
-            </p>
-
-            <a
-                href="animais.html"
-                class="btn btn-primary"
-            >
-                Ver animais
-            </a>
-
-        </div>
-
-    </div>
-
-</main>
+<script src="../js/script.js"></script>
 <script src="../js/script.js"></script>
 
 <script>
@@ -85,21 +22,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const animais = {
 
-        "Thor": {
+        Thor: {
             nome: "Thor",
             sexo: "Macho",
             porte: "Médio",
             cidade: "Patos de Minas - MG"
         },
 
-        "Luna": {
+        Luna: {
             nome: "Luna",
             sexo: "Fêmea",
             porte: "Pequeno",
             cidade: "Patos de Minas - MG"
         },
 
-        "Max": {
+        Max: {
             nome: "Max",
             sexo: "Macho",
             porte: "Grande",
@@ -113,6 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         lista.innerHTML = "";
 
+
+        /* Nenhum favorito */
 
         if (favoritos.length === 0) {
 
@@ -132,8 +71,10 @@ document.addEventListener("DOMContentLoaded", function () {
         contador.textContent =
             favoritos.length === 1
                 ? "1 animal favoritado."
-                : `${favoritos.length} animais favoritados.`;
+                : favoritos.length + " animais favoritados.";
 
+
+        /* Cria os cards */
 
         favoritos.forEach(function (nome) {
 
@@ -155,15 +96,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
             coluna.innerHTML = `
 
-                <div class="favorite-card">
+                <article class="favorite-card">
 
                     <div class="favorite-photo">
 
                         <i class="bi bi-image photo-icon"></i>
 
+
                         <button
                             class="remove-favorite"
                             data-animal="${animal.nome}"
+                            title="Remover dos favoritos"
                         >
 
                             <i class="bi bi-heart-fill"></i>
@@ -179,31 +122,39 @@ document.addEventListener("DOMContentLoaded", function () {
                             ${animal.nome}
                         </h3>
 
+
                         <p>
                             <i class="bi bi-gender-ambiguous"></i>
                             ${animal.sexo}
                         </p>
+
 
                         <p>
                             <i class="bi bi-rulers"></i>
                             Porte ${animal.porte}
                         </p>
 
+
                         <p>
                             <i class="bi bi-geo-alt"></i>
                             ${animal.cidade}
                         </p>
 
+
                         <a
-                            href="#"
+                            href="animal-detalhes.html"
                             class="btn btn-primary w-100"
                         >
+
                             Ver detalhes
+
+                            <i class="bi bi-arrow-right"></i>
+
                         </a>
 
                     </div>
 
-                </div>
+                </article>
 
             `;
 
@@ -213,38 +164,55 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 
-        document.querySelectorAll(
-            ".remove-favorite"
-        ).forEach(function (botao) {
+        /* Botões de remover */
 
-            botao.addEventListener(
-                "click",
-                function () {
-
-                    const nome =
-                        this.dataset.animal;
+        document
+            .querySelectorAll(".remove-favorite")
+            .forEach(function (botao) {
 
 
-                    favoritos =
-                        favoritos.filter(function (item) {
-
-                            return item !== nome;
-
-                        });
+                botao.addEventListener(
+                    "click",
+                    function () {
 
 
-                    localStorage.setItem(
-                        "sosPatinhasFavoritos",
-                        JSON.stringify(favoritos)
-                    );
+                        const nome =
+                            this.dataset.animal;
 
 
-                    carregarFavoritos();
+                        favoritos =
+                            favoritos.filter(
+                                function (item) {
+                                    return item !== nome;
+                                }
+                            );
 
-                }
-            );
 
-        });
+                        localStorage.setItem(
+                            "sosPatinhasFavoritos",
+                            JSON.stringify(favoritos)
+                        );
+
+
+                        carregarFavoritos();
+
+
+                        if (
+                            typeof mostrarMensagem ===
+                            "function"
+                        ) {
+
+                            mostrarMensagem(
+                                nome +
+                                " foi removido dos favoritos."
+                            );
+
+                        }
+
+                    }
+                );
+
+            });
 
     }
 
@@ -254,3 +222,4 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 </script>
+</body>

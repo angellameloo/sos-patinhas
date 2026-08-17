@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     /* =========================================
-       FAVORITOS
+       SISTEMA DE FAVORITOS
     ========================================= */
 
     let favoritos = JSON.parse(
@@ -9,9 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
     ) || [];
 
 
-    const botoesFavoritos = document.querySelectorAll(
-        ".favorite-button"
-    );
+    const botoesFavoritos =
+        document.querySelectorAll(".favorite-button");
 
 
     botoesFavoritos.forEach(function (botao) {
@@ -24,52 +23,61 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        // Verifica se já está favoritado
+        // Se o animal já estiver favoritado
         if (favoritos.includes(animal)) {
-
-            botao.classList.add("favorited");
 
             botao.innerHTML =
                 '<i class="bi bi-heart-fill"></i>';
 
+            botao.classList.add("favorited");
+
         }
 
 
+        // Clique no coração
         botao.addEventListener("click", function () {
 
             if (favoritos.includes(animal)) {
 
-                // Remove
-                favoritos = favoritos.filter(function (item) {
-                    return item !== animal;
-                });
+                // REMOVE
+                favoritos = favoritos.filter(
+                    function (item) {
+                        return item !== animal;
+                    }
+                );
 
-                botao.classList.remove("favorited");
 
                 botao.innerHTML =
                     '<i class="bi bi-heart"></i>';
 
+                botao.classList.remove("favorited");
+
+
                 mostrarMensagem(
-                    `${animal} foi removido dos favoritos.`
+                    animal + " foi removido dos favoritos."
                 );
+
 
             } else {
 
-                // Adiciona
+                // ADICIONA
                 favoritos.push(animal);
 
-                botao.classList.add("favorited");
 
                 botao.innerHTML =
                     '<i class="bi bi-heart-fill"></i>';
 
+                botao.classList.add("favorited");
+
+
                 mostrarMensagem(
-                    `${animal} foi adicionado aos favoritos!`
+                    animal + " foi adicionado aos favoritos!"
                 );
 
             }
 
 
+            // Salva no navegador
             localStorage.setItem(
                 "sosPatinhasFavoritos",
                 JSON.stringify(favoritos)
@@ -78,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     });
+
 
 
     /* =========================================
@@ -98,13 +107,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                 const cidade =
-                    document.getElementById("cidade")?.value || "";
+                    document.getElementById("cidade").value;
 
                 const especie =
-                    document.getElementById("especie")?.value || "";
+                    document.getElementById("especie").value;
 
                 const porte =
-                    document.getElementById("porte")?.value || "";
+                    document.getElementById("porte").value;
 
 
                 const filtros = {
@@ -133,91 +142,62 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+
     /* =========================================
-       LINKS INTERNOS
+       MENSAGEM
     ========================================= */
 
-    document.querySelectorAll('a[href^="#"]').forEach(
-        function (link) {
+    window.mostrarMensagem = function (texto) {
 
-            link.addEventListener("click", function (event) {
-
-                const destino =
-                    document.querySelector(
-                        this.getAttribute("href")
-                    );
+        const mensagemAnterior =
+            document.querySelector(".mensagem-sos");
 
 
-                if (destino) {
-
-                    event.preventDefault();
-
-                    destino.scrollIntoView({
-                        behavior: "smooth"
-                    });
-
-                }
-
-            });
-
+        if (mensagemAnterior) {
+            mensagemAnterior.remove();
         }
-    );
-
-});
 
 
-/* =========================================
-   MENSAGEM
-========================================= */
-
-function mostrarMensagem(texto) {
-
-    const antiga =
-        document.querySelector(".mensagem-sos");
+        const mensagem =
+            document.createElement("div");
 
 
-    if (antiga) {
-        antiga.remove();
-    }
+        mensagem.className =
+            "mensagem-sos";
 
 
-    const mensagem =
-        document.createElement("div");
+        mensagem.innerHTML = `
+
+            <i class="bi bi-check-circle-fill"></i>
+
+            <span>${texto}</span>
+
+        `;
 
 
-    mensagem.className = "mensagem-sos";
-
-
-    mensagem.innerHTML = `
-
-        <i class="bi bi-check-circle-fill"></i>
-
-        <span>${texto}</span>
-
-    `;
-
-
-    document.body.appendChild(mensagem);
-
-
-    setTimeout(function () {
-
-        mensagem.classList.add("mostrar");
-
-    }, 50);
-
-
-    setTimeout(function () {
-
-        mensagem.classList.remove("mostrar");
+        document.body.appendChild(mensagem);
 
 
         setTimeout(function () {
 
-            mensagem.remove();
+            mensagem.classList.add("mostrar");
 
-        }, 300);
+        }, 50);
 
-    }, 3000);
 
-}
+        setTimeout(function () {
+
+            mensagem.classList.remove("mostrar");
+
+
+            setTimeout(function () {
+
+                mensagem.remove();
+
+            }, 300);
+
+        }, 3000);
+
+    };
+
+});
