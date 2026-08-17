@@ -1,32 +1,36 @@
-/* =========================================================
-   SOS PATINHAS
-   JavaScript principal
-   ========================================================= */
-
-
-/* =========================================================
-   1. FAVORITOS
-   ========================================================= */
-
 document.addEventListener("DOMContentLoaded", function () {
 
-    const botoesFavoritos = document.querySelectorAll(".favorite-button");
+    /* =========================================
+       FAVORITOS
+    ========================================= */
 
     let favoritos = JSON.parse(
         localStorage.getItem("sosPatinhasFavoritos")
     ) || [];
 
 
+    const botoesFavoritos = document.querySelectorAll(
+        ".favorite-button"
+    );
+
+
     botoesFavoritos.forEach(function (botao) {
 
         const animal = botao.dataset.animal;
+
+
+        if (!animal) {
+            return;
+        }
+
 
         // Verifica se já está favoritado
         if (favoritos.includes(animal)) {
 
             botao.classList.add("favorited");
 
-            botao.innerHTML = '<i class="bi bi-heart-fill"></i>';
+            botao.innerHTML =
+                '<i class="bi bi-heart-fill"></i>';
 
         }
 
@@ -35,14 +39,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (favoritos.includes(animal)) {
 
-                // Remove dos favoritos
+                // Remove
                 favoritos = favoritos.filter(function (item) {
                     return item !== animal;
                 });
 
                 botao.classList.remove("favorited");
 
-                botao.innerHTML = '<i class="bi bi-heart"></i>';
+                botao.innerHTML =
+                    '<i class="bi bi-heart"></i>';
 
                 mostrarMensagem(
                     `${animal} foi removido dos favoritos.`
@@ -50,12 +55,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
             } else {
 
-                // Adiciona aos favoritos
+                // Adiciona
                 favoritos.push(animal);
 
                 botao.classList.add("favorited");
 
-                botao.innerHTML = '<i class="bi bi-heart-fill"></i>';
+                botao.innerHTML =
+                    '<i class="bi bi-heart-fill"></i>';
 
                 mostrarMensagem(
                     `${animal} foi adicionado aos favoritos!`
@@ -74,9 +80,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* =====================================================
-       2. PESQUISA DA HOME
-    ===================================================== */
+    /* =========================================
+       PESQUISA
+    ========================================= */
 
     const formularioPesquisa =
         document.getElementById("formPesquisa");
@@ -92,16 +98,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                 const cidade =
-                    document.getElementById("cidade").value.trim();
+                    document.getElementById("cidade")?.value || "";
 
                 const especie =
-                    document.getElementById("especie").value;
+                    document.getElementById("especie")?.value || "";
 
                 const porte =
-                    document.getElementById("porte").value;
+                    document.getElementById("porte")?.value || "";
 
 
-                // Guarda os filtros para a página de animais
                 const filtros = {
 
                     cidade: cidade,
@@ -119,7 +124,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
 
 
-                // Redireciona para a página de animais
                 window.location.href =
                     "pages/animais.html";
 
@@ -129,53 +133,51 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       3. ROLAGEM SUAVE
-    ===================================================== */
+    /* =========================================
+       LINKS INTERNOS
+    ========================================= */
 
-    const linksInternos =
-        document.querySelectorAll('a[href^="#"]');
+    document.querySelectorAll('a[href^="#"]').forEach(
+        function (link) {
 
+            link.addEventListener("click", function (event) {
 
-    linksInternos.forEach(function (link) {
-
-        link.addEventListener("click", function (event) {
-
-            const destino =
-                document.querySelector(
-                    this.getAttribute("href")
-                );
+                const destino =
+                    document.querySelector(
+                        this.getAttribute("href")
+                    );
 
 
-            if (destino) {
+                if (destino) {
 
-                event.preventDefault();
+                    event.preventDefault();
 
-                destino.scrollIntoView({
-                    behavior: "smooth"
-                });
+                    destino.scrollIntoView({
+                        behavior: "smooth"
+                    });
 
-            }
+                }
 
-        });
+            });
 
-    });
-
+        }
+    );
 
 });
 
 
-/* =========================================================
-   4. MENSAGEM TEMPORÁRIA
-   ========================================================= */
+/* =========================================
+   MENSAGEM
+========================================= */
 
 function mostrarMensagem(texto) {
 
-    const mensagemExistente =
+    const antiga =
         document.querySelector(".mensagem-sos");
 
-    if (mensagemExistente) {
-        mensagemExistente.remove();
+
+    if (antiga) {
+        antiga.remove();
     }
 
 
@@ -187,8 +189,11 @@ function mostrarMensagem(texto) {
 
 
     mensagem.innerHTML = `
+
         <i class="bi bi-check-circle-fill"></i>
+
         <span>${texto}</span>
+
     `;
 
 
