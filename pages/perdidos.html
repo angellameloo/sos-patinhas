@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Animais Perdidos | SOS Patinhas</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- CSS do projeto -->
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     NAVBAR
+========================================= -->
+
+<header>
+
+    <nav class="navbar navbar-expand-lg bg-white">
+
+        <div class="container">
+
+            <a
+                class="navbar-brand d-flex align-items-center gap-2"
+                href="../index.html"
+            >
+
+                <span
+                    style="
+                    background:#3d877b;
+                    color:white;
+                    width:38px;
+                    height:38px;
+                    border-radius:10px;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    "
+                >
+
+                    <i class="bi bi-heart-fill"></i>
+
+                </span>
+
+                <strong
+                    style="color:#3d877b;"
+                >
+                    SOS Patinhas
+                </strong>
+
+            </a>
+
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menuPrincipal"
+            >
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <div
+                class="collapse navbar-collapse"
+                id="menuPrincipal"
+            >
+
+                <ul
+                    class="navbar-nav ms-auto align-items-lg-center gap-lg-2"
+                >
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="../index.html"
+                        >
+                            Início
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="animais.html"
+                        >
+                            Animais
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link active"
+                            href="perdidos.html"
+                        >
+                            Perdidos
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="ongs.html"
+                        >
+                            ONGs
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="sobre.html"
+                        >
+                            Sobre
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="favoritos.html"
+                        >
+
+                            <i class="bi bi-heart"></i>
+                            Favoritos
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item ms-lg-3">
+
+                        <a
+                            href="login.html"
+                            class="btn btn-primary"
+                        >
+                            Entrar
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================
+     CABEÇALHO
+========================================= -->
+
+<main>
+
+    <section
+        class="py-5"
+        style="
+        background:linear-gradient(
+            135deg,
+            #edf8f5,
+            #fffaf0
+        );
+        "
+    >
+
+        <div class="container">
+
+            <div class="text-center">
+
+                <span
+                    style="
+                    display:inline-block;
+                    background:#e4f4f0;
+                    color:#3d877b;
+                    padding:8px 16px;
+                    border-radius:30px;
+                    font-weight:600;
+                    "
+                >
+
+                    <i class="bi bi-search-heart"></i>
+
+                    Busca por animais
+
+                </span>
+
+
+                <h1
+                    class="mt-4"
+                    style="
+                    font-weight:800;
+                    color:#24343b;
+                    "
+                >
+                    Animais perdidos
+                </h1>
+
+
+                <p
+                    class="mx-auto"
+                    style="
+                    max-width:700px;
+                    color:#667b84;
+                    "
+                >
+
+                    Ajude a encontrar cães e gatos que
+                    desapareceram e precisam voltar para
+                    suas famílias.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+<!-- =========================================
+     PESQUISA
+========================================= -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div
+            class="p-4"
+            style="
+            background:white;
+            border-radius:18px;
+            box-shadow:0 8px 30px rgba(0,0,0,.08);
+            "
+        >
+
+            <div class="d-flex align-items-center gap-3 mb-4">
+
+                <div
+                    style="
+                    width:48px;
+                    height:48px;
+                    border-radius:14px;
+                    background:#e7f4f1;
+                    color:#3d877b;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    font-size:22px;
+                    "
+                >
+
+                    <i class="bi bi-search"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h2
+                        class="mb-1"
+                        style="
+                        font-size:22px;
+                        font-weight:700;
+                        "
+                    >
+                        Encontrar animal perdido
+                    </h2>
+
+                    <p
+                        class="mb-0"
+                        style="color:#7a8c93;"
+                    >
+                        Pesquise por cidade ou espécie.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form id="formPerdidos">
+
+                <div class="row g-3">
+
+
+                    <!-- Cidade -->
+
+                    <div class="col-md-5">
+
+                        <label
+                            for="cidadePerdido"
+                            class="form-label fw-semibold"
+                        >
+                            Cidade
+                        </label>
+
+                        <input
+                            type="text"
+                            id="cidadePerdido"
+                            class="form-control"
+                            placeholder="Digite a cidade"
+                        >
+
+                    </div>
+
+
+
+                    <!-- Espécie -->
+
+                    <div class="col-md-4">
+
+                        <label
+                            for="especiePerdido"
+                            class="form-label fw-semibold"
+                        >
+                            Espécie
+                        </label>
+
+                        <select
+                            id="especiePerdido"
+                            class="form-select"
+                        >
+
+                            <option value="">
+                                Todas
+                            </option>
+
+                            <option value="Cão">
+                                Cão
+                            </option>
+
+                            <option value="Gato">
+                                Gato
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- Botão -->
+
+                    <div
+                        class="col-md-3 d-flex align-items-end"
+                    >
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary w-100"
+                        >
+
+                            <i class="bi bi-search"></i>
+
+                            Pesquisar
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     ANIMAIS PERDIDOS
+========================================= -->
+
+<section class="pb-5">
+
+    <div class="container">
+
+
+        <div
+            class="text-center mb-5"
+        >
+
+            <span
+                style="
+                display:inline-block;
+                background:#fff1e8;
+                color:#d87935;
+                padding:8px 16px;
+                border-radius:30px;
+                font-weight:600;
+                "
+            >
+
+                <i class="bi bi-exclamation-circle"></i>
+
+                Precisam de ajuda
+
+            </span>
+
+
+            <h2
+                class="mt-3"
+                style="
+                font-weight:800;
+                color:#24343b;
+                "
+            >
+                Animais perdidos
+            </h2>
+
+
+            <p
+                style="color:#71858d;"
+            >
+                Confira os animais que estão sendo procurados.
+            </p>
+
+        </div>
+
+
+
+        <div
+            class="row g-4"
+            id="listaPerdidos"
+        >
+
+
+
+            <!-- =================================
+                 THOR
+            ================================== -->
+
+            <div
+                class="col-md-6 col-lg-4 card-perdido"
+                data-cidade="Patos de Minas"
+                data-especie="Cão"
+            >
+
+                <div
+                    class="card h-100 border-0"
+                    style="
+                    border-radius:18px;
+                    overflow:hidden;
+                    box-shadow:0 8px 25px rgba(0,0,0,.08);
+                    "
+                >
+
+                    <div
+                        style="
+                        height:230px;
+                        background:#edf2f1;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        "
+                    >
+
+                        <i
+                            class="bi bi-image"
+                            style="
+                            font-size:55px;
+                            color:#aab8b7;
+                            "
+                        ></i>
+
+                    </div>
+
+
+                    <div class="card-body p-4">
+
+                        <span
+                            style="
+                            background:#fff0e7;
+                            color:#d87534;
+                            padding:6px 12px;
+                            border-radius:20px;
+                            font-size:13px;
+                            font-weight:600;
+                            "
+                        >
+                            PERDIDO
+                        </span>
+
+
+                        <h3
+                            class="mt-3 mb-2"
+                            style="
+                            font-size:22px;
+                            font-weight:700;
+                            "
+                        >
+                            Thor
+                        </h3>
+
+
+                        <p class="mb-2">
+
+                            <i
+                                class="bi bi-gender-male"
+                            ></i>
+
+                            Macho
+
+                            &nbsp; • &nbsp;
+
+                            <i class="bi bi-heart"></i>
+
+                            Cão
+
+                        </p>
+
+
+                        <p class="mb-2">
+
+                            <i class="bi bi-geo-alt"></i>
+
+                            Patos de Minas - MG
+
+                        </p>
+
+
+                        <p class="mb-3">
+
+                            <i class="bi bi-calendar3"></i>
+
+                            Perdido em 10/08/2026
+
+                        </p>
+
+
+                        <div
+                            style="
+                            background:#f7f9f8;
+                            padding:12px;
+                            border-radius:10px;
+                            "
+                        >
+
+                            <strong>
+                                Último local visto:
+                            </strong>
+
+                            <br>
+
+                            Bairro Centro
+
+                        </div>
+
+
+                        <div class="d-flex gap-2 mt-4">
+
+                            <a
+                                href="#"
+                                class="btn btn-primary flex-grow-1"
+                            >
+                                Ver detalhes
+                            </a>
+
+
+                            <button
+                                class="btn btn-outline-secondary btn-compartilhar"
+                                data-animal="Thor"
+                            >
+
+                                <i class="bi bi-share"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 LUNA
+            ================================== -->
+
+            <div
+                class="col-md-6 col-lg-4 card-perdido"
+                data-cidade="Patos de Minas"
+                data-especie="Gato"
+            >
+
+                <div
+                    class="card h-100 border-0"
+                    style="
+                    border-radius:18px;
+                    overflow:hidden;
+                    box-shadow:0 8px 25px rgba(0,0,0,.08);
+                    "
+                >
+
+                    <div
+                        style="
+                        height:230px;
+                        background:#edf2f1;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        "
+                    >
+
+                        <i
+                            class="bi bi-image"
+                            style="
+                            font-size:55px;
+                            color:#aab8b7;
+                            "
+                        ></i>
+
+                    </div>
+
+
+                    <div class="card-body p-4">
+
+                        <span
+                            style="
+                            background:#fff0e7;
+                            color:#d87534;
+                            padding:6px 12px;
+                            border-radius:20px;
+                            font-size:13px;
+                            font-weight:600;
+                            "
+                        >
+                            PERDIDA
+                        </span>
+
+
+                        <h3
+                            class="mt-3 mb-2"
+                            style="
+                            font-size:22px;
+                            font-weight:700;
+                            "
+                        >
+                            Luna
+                        </h3>
+
+
+                        <p class="mb-2">
+
+                            <i class="bi bi-gender-female"></i>
+
+                            Fêmea
+
+                            &nbsp; • &nbsp;
+
+                            <i class="bi bi-heart"></i>
+
+                            Gato
+
+                        </p>
+
+
+                        <p class="mb-2">
+
+                            <i class="bi bi-geo-alt"></i>
+
+                            Patos de Minas - MG
+
+                        </p>
+
+
+                        <p class="mb-3">
+
+                            <i class="bi bi-calendar3"></i>
+
+                            Perdida em 08/08/2026
+
+                        </p>
+
+
+                        <div
+                            style="
+                            background:#f7f9f8;
+                            padding:12px;
+                            border-radius:10px;
+                            "
+                        >
+
+                            <strong>
+                                Último local visto:
+                            </strong>
+
+                            <br>
+
+                            Bairro Lagoa Grande
+
+                        </div>
+
+
+                        <div class="d-flex gap-2 mt-4">
+
+                            <a
+                                href="#"
+                                class="btn btn-primary flex-grow-1"
+                            >
+                                Ver detalhes
+                            </a>
+
+
+                            <button
+                                class="btn btn-outline-secondary btn-compartilhar"
+                                data-animal="Luna"
+                            >
+
+                                <i class="bi bi-share"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 MAX
+            ================================== -->
+
+            <div
+                class="col-md-6 col-lg-4 card-perdido"
+                data-cidade="Patos de Minas"
+                data-especie="Cão"
+            >
+
+                <div
+                    class="card h-100 border-0"
+                    style="
+                    border-radius:18px;
+                    overflow:hidden;
+                    box-shadow:0 8px 25px rgba(0,0,0,.08);
+                    "
+                >
+
+                    <div
+                        style="
+                        height:230px;
+                        background:#edf2f1;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        "
+                    >
+
+                        <i
+                            class="bi bi-image"
+                            style="
+                            font-size:55px;
+                            color:#aab8b7;
+                            "
+                        ></i>
+
+                    </div>
+
+
+                    <div class="card-body p-4">
+
+                        <span
+                            style="
+                            background:#fff0e7;
+                            color:#d87534;
+                            padding:6px 12px;
+                            border-radius:20px;
+                            font-size:13px;
+                            font-weight:600;
+                            "
+                        >
+                            PERDIDO
+                        </span>
+
+
+                        <h3
+                            class="mt-3 mb-2"
+                            style="
+                            font-size:22px;
+                            font-weight:700;
+                            "
+                        >
+                            Max
+                        </h3>
+
+
+                        <p class="mb-2">
+
+                            <i class="bi bi-gender-male"></i>
+
+                            Macho
+
+                            &nbsp; • &nbsp;
+
+                            <i class="bi bi-heart"></i>
+
+                            Cão
+
+                        </p>
+
+
+                        <p class="mb-2">
+
+                            <i class="bi bi-geo-alt"></i>
+
+                            Patos de Minas - MG
+
+                        </p>
+
+
+                        <p class="mb-3">
+
+                            <i class="bi bi-calendar3"></i>
+
+                            Perdido em 05/08/2026
+
+                        </p>
+
+
+                        <div
+                            style="
+                            background:#f7f9f8;
+                            padding:12px;
+                            border-radius:10px;
+                            "
+                        >
+
+                            <strong>
+                                Último local visto:
+                            </strong>
+
+                            <br>
+
+                            Bairro Jardim Paulistano
+
+                        </div>
+
+
+                        <div class="d-flex gap-2 mt-4">
+
+                            <a
+                                href="#"
+                                class="btn btn-primary flex-grow-1"
+                            >
+                                Ver detalhes
+                            </a>
+
+
+                            <button
+                                class="btn btn-outline-secondary btn-compartilhar"
+                                data-animal="Max"
+                            >
+
+                                <i class="bi bi-share"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================
+             SEM RESULTADOS
+        ================================== -->
+
+        <div
+            id="semResultados"
+            class="text-center py-5"
+            style="display:none;"
+        >
+
+            <i
+                class="bi bi-search"
+                style="
+                font-size:55px;
+                color:#a8b8b7;
+                "
+            ></i>
+
+
+            <h3 class="mt-3">
+                Nenhum animal encontrado
+            </h3>
+
+
+            <p style="color:#71858d;">
+                Tente pesquisar utilizando outros filtros.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer
+    style="
+    background:#24343b;
+    color:white;
+    padding:40px 0;
+    "
+>
+
+    <div class="container">
+
+        <div class="row g-4">
+
+
+            <div class="col-md-6">
+
+                <h4>
+                    <i class="bi bi-heart-fill"></i>
+                    SOS Patinhas
+                </h4>
+
+                <p
+                    style="
+                    color:#c6d0d3;
+                    max-width:500px;
+                    "
+                >
+
+                    Conectando animais, ONGs e pessoas
+                    para promover adoções responsáveis e
+                    ajudar animais perdidos a encontrarem
+                    o caminho de volta para casa.
+
+                </p>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <h5>
+                    Navegação
+                </h5>
+
+                <a
+                    href="../index.html"
+                    class="d-block text-decoration-none text-white mb-2"
+                >
+                    Início
+                </a>
+
+                <a
+                    href="animais.html"
+                    class="d-block text-decoration-none text-white mb-2"
+                >
+                    Animais
+                </a>
+
+                <a
+                    href="ongs.html"
+                    class="d-block text-decoration-none text-white mb-2"
+                >
+                    ONGs
+                </a>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <h5>
+                    SOS Patinhas
+                </h5>
+
+                <p
+                    style="color:#c6d0d3;"
+                >
+                    Adoção responsável e proteção animal.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <hr
+            style="
+            border-color:#526168;
+            "
+        >
+
+
+        <p
+            class="text-center mb-0"
+            style="color:#c6d0d3;"
+        >
+            © 2026 SOS Patinhas — Projeto TCC
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- Bootstrap JS -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+></script>
+
+
+<!-- JavaScript do projeto -->
+
+<script src="../js/script.js"></script>
+
+
+
+<!-- =========================================
+     JAVASCRIPT DA PÁGINA
+========================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* =========================================
+       PESQUISA DE ANIMAIS PERDIDOS
+    ========================================= */
+
+    const formulario =
+        document.getElementById("formPerdidos");
+
+
+    const cards =
+        document.querySelectorAll(".card-perdido");
+
+
+    const semResultados =
+        document.getElementById("semResultados");
+
+
+    formulario.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+
+        const cidade =
+            document
+                .getElementById("cidadePerdido")
+                .value
+                .toLowerCase()
+                .trim();
+
+
+        const especie =
+            document
+                .getElementById("especiePerdido")
+                .value;
+
+
+        let encontrados = 0;
+
+
+        cards.forEach(function (card) {
+
+
+            const cidadeCard =
+                card.dataset.cidade.toLowerCase();
+
+
+            const especieCard =
+                card.dataset.especie;
+
+
+            const cidadeCorreta =
+                cidade === "" ||
+                cidadeCard.includes(cidade);
+
+
+            const especieCorreta =
+                especie === "" ||
+                especieCard === especie;
+
+
+            if (
+                cidadeCorreta &&
+                especieCorreta
+            ) {
+
+                card.style.display = "";
+
+                encontrados++;
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+
+        if (encontrados === 0) {
+
+            semResultados.style.display = "block";
+
+        } else {
+
+            semResultados.style.display = "none";
+
+        }
+
+    });
+
+
+
+    /* =========================================
+       COMPARTILHAR
+    ========================================= */
+
+    const botoesCompartilhar =
+        document.querySelectorAll(
+            ".btn-compartilhar"
+        );
+
+
+    botoesCompartilhar.forEach(function (botao) {
+
+
+        botao.addEventListener("click", function () {
+
+
+            const animal =
+                this.dataset.animal;
+
+
+            const texto =
+                `Ajude a encontrar o animal perdido ${animal} pelo SOS Patinhas!`;
+
+
+            if (
+                navigator.share
+            ) {
+
+                navigator.share({
+
+                    title:
+                        "SOS Patinhas",
+
+                    text:
+                        texto,
+
+                    url:
+                        window.location.href
+
+                });
+
+            } else {
+
+                navigator.clipboard.writeText(
+                    texto + " " + window.location.href
+                );
+
+
+                alert(
+                    "Informações copiadas! Você pode compartilhar com seus contatos."
+                );
+
+            }
+
+        });
+
+    });
+
+
+});
+
+</script>
+
+
+</body>
+
+</html>
