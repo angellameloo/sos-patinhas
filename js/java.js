@@ -1,160 +1,159 @@
-/* ======================================================
+/* =========================================================
    SOS PATINHAS
-   script.js
-====================================================== */
+   JavaScript principal
+   ========================================================= */
 
-/* ===========================
-   MENU FIXO
-=========================== */
 
-window.addEventListener("scroll", function () {
+/* =========================================================
+   1. FAVORITOS
+   ========================================================= */
 
-    const navbar = document.querySelector(".navbar");
+document.addEventListener("DOMContentLoaded", function () {
 
-    if (window.scrollY > 50) {
+    const botoesFavoritos = document.querySelectorAll(".favorite-button");
 
-        navbar.classList.add("shadow");
+    let favoritos = JSON.parse(
+        localStorage.getItem("sosPatinhasFavoritos")
+    ) || [];
 
-    } else {
 
-        navbar.classList.remove("shadow");
+    botoesFavoritos.forEach(function (botao) {
 
-    }
+        const animal = botao.dataset.animal;
 
-});
+        // Verifica se já está favoritado
+        if (favoritos.includes(animal)) {
 
-/* ===========================
-   BOTÃO VOLTAR AO TOPO
-=========================== */
+            botao.classList.add("favorited");
 
-const btnTopo = document.createElement("button");
-
-btnTopo.id = "btnTopo";
-
-btnTopo.innerHTML = "⬆";
-
-document.body.appendChild(btnTopo);
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 300) {
-
-        btnTopo.style.display = "block";
-
-    } else {
-
-        btnTopo.style.display = "none";
-
-    }
-
-});
-
-btnTopo.addEventListener("click", () => {
-
-    window.scrollTo({
-
-        top: 0,
-
-        behavior: "smooth"
-
-    });
-
-});
-
-/* ===========================
-   FAVORITOS
-=========================== */
-
-const favoritos = document.querySelectorAll(".favorite-btn");
-
-favoritos.forEach(botao => {
-
-    botao.addEventListener("click", function () {
-
-        const icone = this.querySelector("i");
-
-        if (icone.classList.contains("bi-heart")) {
-
-            icone.classList.remove("bi-heart");
-
-            icone.classList.add("bi-heart-fill");
-
-            this.classList.remove("btn-outline-danger");
-
-            this.classList.add("btn-danger");
-
-        } else {
-
-            icone.classList.remove("bi-heart-fill");
-
-            icone.classList.add("bi-heart");
-
-            this.classList.remove("btn-danger");
-
-            this.classList.add("btn-outline-danger");
+            botao.innerHTML = '<i class="bi bi-heart-fill"></i>';
 
         }
 
-    });
 
-});
+        botao.addEventListener("click", function () {
 
-/* ===========================
-   MENSAGEM DE BOAS-VINDAS
-=========================== */
+            if (favoritos.includes(animal)) {
 
-window.addEventListener("load", () => {
+                // Remove dos favoritos
+                favoritos = favoritos.filter(function (item) {
+                    return item !== animal;
+                });
 
-    console.log("Bem-vindo ao SOS Patinhas!");
+                botao.classList.remove("favorited");
 
-});
+                botao.innerHTML = '<i class="bi bi-heart"></i>';
 
-/* ===========================
-   ANIMAÇÃO DOS CARDS
-=========================== */
-
-const cards = document.querySelectorAll(".animal-card");
-
-cards.forEach(card => {
-
-    card.addEventListener("mouseenter", () => {
-
-        card.style.transform = "translateY(-10px)";
-
-    });
-
-    card.addEventListener("mouseleave", () => {
-
-        card.style.transform = "translateY(0px)";
-
-    });
-
-});
-/* ======================================================
-   PESQUISA DE ANIMAIS
-====================================================== */
-
-const campoPesquisa = document.querySelector("#pesquisa");
-
-if (campoPesquisa) {
-
-    campoPesquisa.addEventListener("keyup", function () {
-
-        let texto = this.value.toLowerCase();
-
-        let cards = document.querySelectorAll(".animal-card");
-
-        cards.forEach(card => {
-
-            let nome = card.querySelector("h5").innerText.toLowerCase();
-
-            if (nome.includes(texto)) {
-
-                card.style.display = "block";
+                mostrarMensagem(
+                    `${animal} foi removido dos favoritos.`
+                );
 
             } else {
 
-                card.style.display = "none";
+                // Adiciona aos favoritos
+                favoritos.push(animal);
+
+                botao.classList.add("favorited");
+
+                botao.innerHTML = '<i class="bi bi-heart-fill"></i>';
+
+                mostrarMensagem(
+                    `${animal} foi adicionado aos favoritos!`
+                );
+
+            }
+
+
+            localStorage.setItem(
+                "sosPatinhasFavoritos",
+                JSON.stringify(favoritos)
+            );
+
+        });
+
+    });
+
+
+    /* =====================================================
+       2. PESQUISA DA HOME
+    ===================================================== */
+
+    const formularioPesquisa =
+        document.getElementById("formPesquisa");
+
+
+    if (formularioPesquisa) {
+
+        formularioPesquisa.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                const cidade =
+                    document.getElementById("cidade").value.trim();
+
+                const especie =
+                    document.getElementById("especie").value;
+
+                const porte =
+                    document.getElementById("porte").value;
+
+
+                // Guarda os filtros para a página de animais
+                const filtros = {
+
+                    cidade: cidade,
+
+                    especie: especie,
+
+                    porte: porte
+
+                };
+
+
+                localStorage.setItem(
+                    "sosPatinhasFiltros",
+                    JSON.stringify(filtros)
+                );
+
+
+                // Redireciona para a página de animais
+                window.location.href =
+                    "pages/animais.html";
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       3. ROLAGEM SUAVE
+    ===================================================== */
+
+    const linksInternos =
+        document.querySelectorAll('a[href^="#"]');
+
+
+    linksInternos.forEach(function (link) {
+
+        link.addEventListener("click", function (event) {
+
+            const destino =
+                document.querySelector(
+                    this.getAttribute("href")
+                );
+
+
+            if (destino) {
+
+                event.preventDefault();
+
+                destino.scrollIntoView({
+                    behavior: "smooth"
+                });
 
             }
 
@@ -162,132 +161,58 @@ if (campoPesquisa) {
 
     });
 
-}
 
-/* ======================================================
-   FAVORITOS (LOCAL STORAGE)
-====================================================== */
+});
 
-let favoritosSalvos =
-JSON.parse(localStorage.getItem("favoritos")) || [];
 
-const botoesFavorito =
-document.querySelectorAll(".favorite-btn");
+/* =========================================================
+   4. MENSAGEM TEMPORÁRIA
+   ========================================================= */
 
-botoesFavorito.forEach((botao, indice) => {
+function mostrarMensagem(texto) {
 
-    if(favoritosSalvos.includes(indice)){
+    const mensagemExistente =
+        document.querySelector(".mensagem-sos");
 
-        botao.classList.add("btn-danger");
-
-        botao.innerHTML='<i class="bi bi-heart-fill"></i>';
-
+    if (mensagemExistente) {
+        mensagemExistente.remove();
     }
 
-    botao.addEventListener("click",()=>{
 
-        if(favoritosSalvos.includes(indice)){
+    const mensagem =
+        document.createElement("div");
 
-            favoritosSalvos =
-            favoritosSalvos.filter(item=>item!=indice);
 
-            botao.classList.remove("btn-danger");
+    mensagem.className = "mensagem-sos";
 
-            botao.classList.add("btn-outline-danger");
 
-            botao.innerHTML='<i class="bi bi-heart"></i>';
+    mensagem.innerHTML = `
+        <i class="bi bi-check-circle-fill"></i>
+        <span>${texto}</span>
+    `;
 
-        }
 
-        else{
+    document.body.appendChild(mensagem);
 
-            favoritosSalvos.push(indice);
 
-            botao.classList.remove("btn-outline-danger");
+    setTimeout(function () {
 
-            botao.classList.add("btn-danger");
+        mensagem.classList.add("mostrar");
 
-            botao.innerHTML='<i class="bi bi-heart-fill"></i>';
+    }, 50);
 
-        }
 
-        localStorage.setItem(
-            "favoritos",
-            JSON.stringify(favoritosSalvos)
-        );
+    setTimeout(function () {
 
-    });
+        mensagem.classList.remove("mostrar");
 
-});
 
-/* ======================================================
-   SCROLL SUAVE
-====================================================== */
+        setTimeout(function () {
 
-document.querySelectorAll('a[href^="#"]').forEach(link=>{
+            mensagem.remove();
 
-link.addEventListener("click",function(e){
+        }, 300);
 
-e.preventDefault();
-
-const destino=document.querySelector(this.getAttribute("href"));
-
-if(destino){
-
-destino.scrollIntoView({
-
-behavior:"smooth"
-
-});
+    }, 3000);
 
 }
-
-});
-
-});
-
-/* ======================================================
-   DATA E HORA
-====================================================== */
-
-function atualizarHorario(){
-
-const data=new Date();
-
-const hora=data.toLocaleTimeString("pt-BR");
-
-const relogio=document.querySelector("#horaAtual");
-
-if(relogio){
-
-relogio.innerHTML=hora;
-
-}
-
-}
-
-setInterval(atualizarHorario,1000);
-
-/* ======================================================
-   ANIMAÇÃO AO ROLAR A PÁGINA
-====================================================== */
-
-const observer=new IntersectionObserver((entries)=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("mostrar");
-
-}
-
-});
-
-});
-
-document.querySelectorAll(".animal-card,.info-card").forEach(el=>{
-
-observer.observe(el);
-
-});
