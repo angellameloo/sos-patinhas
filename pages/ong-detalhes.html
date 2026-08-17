@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Perfil da ONG | SOS Patinhas</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- CSS principal -->
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css"
+    >
+
+    <style>
+
+        /* =========================================
+           CABEÇALHO
+        ========================================= */
+
+        .ong-profile-header {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eaf7f3,
+                    #fffaf1
+                );
+
+            padding: 65px 0;
+
+        }
+
+
+        .back-link {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            color: #3d877b;
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .back-link:hover {
+
+            color: #286c62;
+
+        }
+
+
+        .ong-profile-logo {
+
+            width: 120px;
+
+            height: 120px;
+
+            border-radius: 28px;
+
+            background: #3d877b;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 48px;
+
+            box-shadow:
+                0 12px 30px
+                rgba(61, 135, 123, .20);
+
+        }
+
+
+        .ong-profile-title h1 {
+
+            color: #24343b;
+
+            font-weight: 800;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .ong-verified {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            color: #3d877b;
+
+            background: #e2f4ef;
+
+            padding: 7px 13px;
+
+            border-radius: 20px;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+        }
+
+
+        .ong-location {
+
+            color: #71858d;
+
+            margin-top: 12px;
+
+        }
+
+
+        /* =========================================
+           ESTATÍSTICAS
+        ========================================= */
+
+        .stats-section {
+
+            padding: 35px 0;
+
+            background: white;
+
+        }
+
+
+        .stat-box {
+
+            text-align: center;
+
+            padding: 20px;
+
+            border-right: 1px solid #e5ecea;
+
+        }
+
+
+        .stat-box:last-child {
+
+            border-right: none;
+
+        }
+
+
+        .stat-box strong {
+
+            display: block;
+
+            color: #3d877b;
+
+            font-size: 30px;
+
+            font-weight: 800;
+
+        }
+
+
+        .stat-box span {
+
+            color: #788991;
+
+            font-size: 14px;
+
+        }
+
+
+        /* =========================================
+           CONTEÚDO
+        ========================================= */
+
+        .ong-content-section {
+
+            padding: 60px 0;
+
+            background: #f7faf9;
+
+        }
+
+
+        .content-card {
+
+            background: white;
+
+            border-radius: 18px;
+
+            padding: 30px;
+
+            box-shadow:
+                0 8px 25px
+                rgba(35, 70, 65, .06);
+
+            border: 1px solid #e3ebe8;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .content-card h2 {
+
+            color: #26373d;
+
+            font-size: 24px;
+
+            font-weight: 800;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .content-card h2 i {
+
+            color: #3d877b;
+
+            margin-right: 8px;
+
+        }
+
+
+        .content-card p {
+
+            color: #718189;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =========================================
+           INFORMAÇÕES
+        ========================================= */
+
+        .contact-item {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 15px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .contact-icon {
+
+            min-width: 43px;
+
+            width: 43px;
+
+            height: 43px;
+
+            border-radius: 11px;
+
+            background: #e8f5f1;
+
+            color: #3d877b;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 19px;
+
+        }
+
+
+        .contact-item strong {
+
+            display: block;
+
+            color: #33454b;
+
+            margin-bottom: 3px;
+
+        }
+
+
+        .contact-item span {
+
+            color: #778990;
+
+            font-size: 14px;
+
+        }
+
+
+        /* =========================================
+           REDES SOCIAIS
+        ========================================= */
+
+        .social-buttons {
+
+            display: flex;
+
+            gap: 10px;
+
+            margin-top: 20px;
+
+        }
+
+
+        .social-button {
+
+            width: 42px;
+
+            height: 42px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #e8f5f1;
+
+            color: #3d877b;
+
+            text-decoration: none;
+
+            transition: .2s;
+
+        }
+
+
+        .social-button:hover {
+
+            background: #3d877b;
+
+            color: white;
+
+            transform: translateY(-2px);
+
+        }
+
+
+        /* =========================================
+           ANIMAIS DA ONG
+        ========================================= */
+
+        .animal-mini-card {
+
+            background: white;
+
+            border-radius: 16px;
+
+            overflow: hidden;
+
+            border: 1px solid #e3ebe8;
+
+            height: 100%;
+
+            transition: .2s;
+
+        }
+
+
+        .animal-mini-card:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 10px 25px
+                rgba(35, 70, 65, .10);
+
+        }
+
+
+        .animal-mini-photo {
+
+            height: 180px;
+
+            background: #edf3f1;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #a5b4b1;
+
+            font-size: 48px;
+
+        }
+
+
+        .animal-mini-info {
+
+            padding: 18px;
+
+        }
+
+
+        .animal-mini-info h3 {
+
+            font-size: 20px;
+
+            font-weight: 800;
+
+            color: #26373d;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .animal-mini-info p {
+
+            margin-bottom: 6px;
+
+            font-size: 14px;
+
+            line-height: 1.4;
+
+        }
+
+
+        .animal-mini-info i {
+
+            color: #3d877b;
+
+        }
+
+
+        /* =========================================
+           RESPONSIVO
+        ========================================= */
+
+        @media (max-width: 767px) {
+
+            .ong-profile-header {
+
+                padding: 45px 0;
+
+            }
+
+
+            .ong-profile-logo {
+
+                width: 95px;
+
+                height: 95px;
+
+                font-size: 38px;
+
+            }
+
+
+            .ong-profile-title h1 {
+
+                font-size: 30px;
+
+            }
+
+
+            .stat-box {
+
+                border-right: none;
+
+                border-bottom: 1px solid #e5ecea;
+
+            }
+
+
+            .stat-box:last-child {
+
+                border-bottom: none;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     NAVBAR
+========================================= -->
+
+<header>
+
+    <nav class="navbar navbar-expand-lg bg-white">
+
+        <div class="container">
+
+            <a
+                class="navbar-brand d-flex align-items-center gap-2"
+                href="../index.html"
+            >
+
+                <span
+                    style="
+                    width:38px;
+                    height:38px;
+                    border-radius:10px;
+                    background:#3d877b;
+                    color:white;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    "
+                >
+
+                    <i class="bi bi-heart-fill"></i>
+
+                </span>
+
+
+                <strong style="color:#3d877b;">
+                    SOS Patinhas
+                </strong>
+
+            </a>
+
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menuPrincipal"
+            >
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <div
+                class="collapse navbar-collapse"
+                id="menuPrincipal"
+            >
+
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="../index.html"
+                        >
+                            Início
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="animais.html"
+                        >
+                            Animais
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="perdidos.html"
+                        >
+                            Perdidos
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link active"
+                            href="ongs.html"
+                        >
+                            ONGs
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="favoritos.html"
+                        >
+
+                            <i class="bi bi-heart"></i>
+
+                            Favoritos
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item ms-lg-3">
+
+                        <a
+                            href="login.html"
+                            class="btn btn-primary"
+                        >
+                            Entrar
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================
+     CABEÇALHO DA ONG
+========================================= -->
+
+<section class="ong-profile-header">
+
+    <div class="container">
+
+
+        <a
+            href="ongs.html"
+            class="back-link"
+        >
+
+            <i class="bi bi-arrow-left"></i>
+
+            Voltar para ONGs
+
+        </a>
+
+
+        <div class="row align-items-center g-4">
+
+
+            <div class="col-md-auto">
+
+                <div class="ong-profile-logo">
+
+                    <i class="bi bi-heart-fill"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="col">
+
+                <div class="ong-profile-title">
+
+                    <span class="ong-verified">
+
+                        <i class="bi bi-patch-check-fill"></i>
+
+                        ONG cadastrada
+
+                    </span>
+
+
+                    <h1 class="mt-3">
+                        Amigos dos Animais
+                    </h1>
+
+
+                    <div class="ong-location">
+
+                        <i class="bi bi-geo-alt-fill"></i>
+
+                        Patos de Minas - MG
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     ESTATÍSTICAS
+========================================= -->
+
+<section class="stats-section">
+
+    <div class="container">
+
+        <div class="row">
+
+
+            <div class="col-4">
+
+                <div class="stat-box">
+
+                    <strong>
+                        32
+                    </strong>
+
+                    <span>
+                        Animais cadastrados
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-4">
+
+                <div class="stat-box">
+
+                    <strong>
+                        18
+                    </strong>
+
+                    <span>
+                        Adoções realizadas
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-4">
+
+                <div class="stat-box">
+
+                    <strong>
+                        6
+                    </strong>
+
+                    <span>
+                        Anos de atuação
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONTEÚDO PRINCIPAL
+========================================= -->
+
+<section class="ong-content-section">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+
+            <!-- ================================
+                 COLUNA PRINCIPAL
+            ================================= -->
+
+            <div class="col-lg-8">
+
+
+                <!-- História -->
+
+                <div class="content-card">
+
+                    <h2>
+
+                        <i class="bi bi-book"></i>
+
+                        Sobre a ONG
+
+                    </h2>
+
+
+                    <p>
+
+                        A ONG Amigos dos Animais atua na
+                        proteção e no cuidado de cães e gatos
+                        que precisam de ajuda.
+
+                    </p>
+
+
+                    <p>
+
+                        O trabalho da organização envolve o
+                        resgate de animais, cuidados básicos,
+                        acompanhamento e busca por famílias
+                        responsáveis para adoção.
+
+                    </p>
+
+
+                    <p>
+
+                        Por meio do SOS Patinhas, a ONG pode
+                        divulgar seus animais, organizar seus
+                        cadastros e facilitar o contato com
+                        pessoas interessadas em adotar.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- Missão -->
+
+                <div class="content-card">
+
+                    <h2>
+
+                        <i class="bi bi-stars"></i>
+
+                        Nossa missão
+
+                    </h2>
+
+
+                    <p>
+
+                        Promover a proteção animal e contribuir
+                        para que cães e gatos encontrem lares
+                        seguros, responsáveis e acolhedores.
+
+                    </p>
+
+
+                    <div class="row g-3 mt-2">
+
+
+                        <div class="col-md-4">
+
+                            <div
+                                class="p-3 rounded-3"
+                                style="background:#f1f8f6;"
+                            >
+
+                                <i
+                                    class="bi bi-heart-fill"
+                                    style="
+                                    color:#3d877b;
+                                    font-size:25px;
+                                    "
+                                ></i>
+
+                                <h5 class="mt-2">
+                                    Proteção
+                                </h5>
+
+                                <small
+                                    style="color:#718189;"
+                                >
+                                    Cuidado e proteção dos animais.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-4">
+
+                            <div
+                                class="p-3 rounded-3"
+                                style="background:#f1f8f6;"
+                            >
+
+                                <i
+                                    class="bi bi-house-heart-fill"
+                                    style="
+                                    color:#3d877b;
+                                    font-size:25px;
+                                    "
+                                ></i>
+
+                                <h5 class="mt-2">
+                                    Adoção
+                                </h5>
+
+                                <small
+                                    style="color:#718189;"
+                                >
+                                    Busca por lares responsáveis.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-4">
+
+                            <div
+                                class="p-3 rounded-3"
+                                style="background:#f1f8f6;"
+                            >
+
+                                <i
+                                    class="bi bi-people-fill"
+                                    style="
+                                    color:#3d877b;
+                                    font-size:25px;
+                                    "
+                                ></i>
+
+                                <h5 class="mt-2">
+                                    Comunidade
+                                </h5>
+
+                                <small
+                                    style="color:#718189;"
+                                >
+                                    União de pessoas em prol dos animais.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Animais -->
+
+                <div class="content-card">
+
+                    <h2>
+
+                        <i class="bi bi-heart-fill"></i>
+
+                        Animais disponíveis
+
+                    </h2>
+
+
+                    <p>
+                        Conheça alguns animais cadastrados
+                        por esta ONG.
+                    </p>
+
+
+                    <div class="row g-3 mt-2">
+
+
+                        <!-- Thor -->
+
+                        <div class="col-md-6">
+
+                            <div class="animal-mini-card">
+
+                                <div class="animal-mini-photo">
+
+                                    <i class="bi bi-image"></i>
+
+                                </div>
+
+
+                                <div class="animal-mini-info">
+
+                                    <h3>
+                                        Thor
+                                    </h3>
+
+
+                                    <p>
+
+                                        <i class="bi bi-gender-male"></i>
+
+                                        Macho
+
+                                    </p>
+
+
+                                    <p>
+
+                                        <i class="bi bi-rulers"></i>
+
+                                        Porte médio
+
+                                    </p>
+
+
+                                    <p>
+
+                                        <i class="bi bi-geo-alt"></i>
+
+                                        Patos de Minas - MG
+
+                                    </p>
+
+
+                                    <a
+                                        href="animal-detalhes.html?animal=thor"
+                                        class="btn btn-primary btn-sm w-100 mt-2"
+                                    >
+
+                                        Ver animal
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Luna -->
+
+                        <div class="col-md-6">
+
+                            <div class="animal-mini-card">
+
+                                <div class="animal-mini-photo">
+
+                                    <i class="bi bi-image"></i>
+
+                                </div>
+
+
+                                <div class="animal-mini-info">
+
+                                    <h3>
+                                        Luna
+                                    </h3>
+
+
+                                    <p>
+
+                                        <i class="bi bi-gender-female"></i>
+
+                                        Fêmea
+
+                                    </p>
+
+
+                                    <p>
+
+                                        <i class="bi bi-rulers"></i>
+
+                                        Porte pequeno
+
+                                    </p>
+
+
+                                    <p>
+
+                                        <i class="bi bi-geo-alt"></i>
+
+                                        Patos de Minas - MG
+
+                                    </p>
+
+
+                                    <a
+                                        href="animal-detalhes.html?animal=luna"
+                                        class="btn btn-primary btn-sm w-100 mt-2"
+                                    >
+
+                                        Ver animal
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================
+                 SIDEBAR
+            ================================= -->
+
+            <div class="col-lg-4">
+
+
+                <!-- Contato -->
+
+                <div class="content-card">
+
+                    <h2>
+
+                        <i class="bi bi-info-circle"></i>
+
+                        Informações
+
+                    </h2>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+
+                            <i class="bi bi-geo-alt"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Endereço
+                            </strong>
+
+                            <span>
+                                Rua das Patinhas, 120
+                                <br>
+                                Centro — Patos de Minas/MG
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+
+                            <i class="bi bi-telephone"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Telefone
+                            </strong>
+
+                            <span>
+                                (34) 99999-0001
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+
+                            <i class="bi bi-envelope"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                E-mail
+                            </strong>
+
+                            <span>
+                                contato@amigosdosanimais.org
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+
+                            <i class="bi bi-clock"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Atendimento
+                            </strong>
+
+                            <span>
+                                Segunda a sexta
+                                <br>
+                                08:00 às 17:00
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Redes -->
+
+                    <h5 class="mt-4">
+
+                        Redes sociais
+
+                    </h5>
+
+
+                    <div class="social-buttons">
+
+                        <a
+                            href="#"
+                            class="social-button"
+                            aria-label="Instagram"
+                        >
+
+                            <i class="bi bi-instagram"></i>
+
+                        </a>
+
+
+                        <a
+                            href="#"
+                            class="social-button"
+                            aria-label="Facebook"
+                        >
+
+                            <i class="bi bi-facebook"></i>
+
+                        </a>
+
+
+                        <a
+                            href="#"
+                            class="social-button"
+                            aria-label="WhatsApp"
+                        >
+
+                            <i class="bi bi-whatsapp"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Botão adoção -->
+
+                <div
+                    class="content-card"
+                    style="
+                    background:#3d877b;
+                    border:none;
+                    "
+                >
+
+                    <h3
+                        style="
+                        color:white;
+                        font-weight:800;
+                        "
+                    >
+
+                        <i class="bi bi-heart-fill"></i>
+
+                        Quer adotar?
+
+                    </h3>
+
+
+                    <p
+                        style="
+                        color:#e4f3ef;
+                        "
+                    >
+
+                        Encontre um animal disponível
+                        e envie uma solicitação de adoção
+                        para a ONG.
+
+                    </p>
+
+
+                    <a
+                        href="animais.html"
+                        class="btn btn-light w-100"
+                        style="
+                        color:#3d877b;
+                        font-weight:700;
+                        "
+                    >
+
+                        Ver animais
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer
+    style="
+    background:#24343b;
+    color:white;
+    padding:40px 0;
+    "
+>
+
+    <div class="container">
+
+        <div class="row g-4">
+
+
+            <div class="col-md-6">
+
+                <h4>
+
+                    <i class="bi bi-heart-fill"></i>
+
+                    SOS Patinhas
+
+                </h4>
+
+
+                <p
+                    style="
+                    color:#c6d0d3;
+                    max-width:520px;
+                    "
+                >
+
+                    Conectando animais, ONGs e pessoas
+                    para promover a adoção responsável
+                    e ajudar animais perdidos.
+
+                </p>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <h5>
+                    Navegação
+                </h5>
+
+
+                <a
+                    href="../index.html"
+                    class="d-block text-white text-decoration-none mb-2"
+                >
+                    Início
+                </a>
+
+
+                <a
+                    href="animais.html"
+                    class="d-block text-white text-decoration-none mb-2"
+                >
+                    Animais
+                </a>
+
+
+                <a
+                    href="perdidos.html"
+                    class="d-block text-white text-decoration-none mb-2"
+                >
+                    Perdidos
+                </a>
+
+
+                <a
+                    href="ongs.html"
+                    class="d-block text-white text-decoration-none mb-2"
+                >
+                    ONGs
+                </a>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <h5>
+                    Conta
+                </h5>
+
+
+                <a
+                    href="login.html"
+                    class="d-block text-white text-decoration-none mb-2"
+                >
+                    Entrar
+                </a>
+
+
+                <a
+                    href="cadastro.html"
+                    class="d-block text-white text-decoration-none mb-2"
+                >
+                    Criar conta
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <hr
+            style="
+            border-color:#53636a;
+            margin:30px 0 20px;
+            "
+        >
+
+
+        <p
+            class="text-center mb-0"
+            style="color:#c6d0d3;"
+        >
+
+            © 2026 SOS Patinhas — Projeto TCC
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- Bootstrap JS -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+></script>
+
+
+<!-- JavaScript principal -->
+
+<script src="../js/script.js"></script>
+
+
+</body>
+
+</html>
