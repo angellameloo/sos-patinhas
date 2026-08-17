@@ -4,606 +4,1505 @@
 <head>
 
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SOS Patinhas</title>
+    <meta
+        name="description"
+        content="SOS Patinhas - Sistema de gerenciamento de adoção e busca de animais perdidos."
+    >
+
+    <title>SOS Patinhas | Adoção e Animais Perdidos</title>
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
 
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
+
 <body>
 
-<!-- ===================================================
-MENU
-==================================================== -->
 
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <!-- ==========================
+         MENU
+    =========================== -->
 
-<div class="container">
+    <header>
 
-<a class="navbar-brand fw-bold" href="index.html">
+        <nav class="navbar navbar-expand-lg">
 
-🐾 SOS Patinhas
+            <div class="container">
 
-</a>
+                <!-- LOGO -->
 
-<button
-class="navbar-toggler"
-type="button"
-data-bs-toggle="collapse"
-data-bs-target="#menu">
+                <a class="navbar-brand" href="index.html">
 
-<span class="navbar-toggler-icon"></span>
+                    <span class="logo-icon">
+                        <i class="bi bi-heart-fill"></i>
+                    </span>
 
-</button>
+                    <span>
+                        SOS Patinhas
+                    </span>
 
-<div class="collapse navbar-collapse" id="menu">
+                </a>
 
-<ul class="navbar-nav ms-auto">
 
-<li class="nav-item">
+                <!-- BOTÃO MOBILE -->
 
-<a class="nav-link active" href="index.html">
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal"
+                    aria-expanded="false"
+                    aria-label="Abrir menu"
+                >
 
-Início
+                    <i class="bi bi-list"></i>
 
-</a>
+                </button>
 
-</li>
 
-<li class="nav-item">
+                <!-- LINKS -->
 
-<a class="nav-link" href="#sobre">
+                <div
+                    class="collapse navbar-collapse"
+                    id="menuPrincipal"
+                >
 
-Sobre
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
 
-</a>
+                        <li class="nav-item">
 
-</li>
+                            <a
+                                class="nav-link active"
+                                href="index.html"
+                            >
+                                Início
+                            </a>
 
-<li class="nav-item">
+                        </li>
 
-<a class="nav-link" href="#animais">
 
-Animais
+                        <li class="nav-item">
 
-</a>
+                            <a
+                                class="nav-link"
+                                href="pages/animais.html"
+                            >
+                                Animais
+                            </a>
 
-</li>
+                        </li>
 
-<li class="nav-item">
 
-<a class="nav-link" href="#ongs">
+                        <li class="nav-item">
 
-ONGs
+                            <a
+                                class="nav-link"
+                                href="pages/perdidos.html"
+                            >
+                                Perdidos
+                            </a>
 
-</a>
+                        </li>
 
-</li>
 
-<li class="nav-item">
+                        <li class="nav-item">
 
-<a class="nav-link" href="pages/favoritos.html">
+                            <a
+                                class="nav-link"
+                                href="pages/ongs.html"
+                            >
+                                ONGs
+                            </a>
 
-<i class="bi bi-heart-fill"></i>
+                        </li>
 
-Favoritos
 
-</a>
+                        <li class="nav-item">
 
-</li>
+                            <a
+                                class="nav-link"
+                                href="#sobre"
+                            >
+                                Sobre
+                            </a>
 
-<li class="nav-item">
+                        </li>
 
-<a class="nav-link" href="pages/login.html">
 
-Entrar
+                        <li class="nav-item">
 
-</a>
+                            <a
+                                class="nav-link"
+                                href="pages/favoritos.html"
+                            >
+                                <i class="bi bi-heart"></i>
+                                Favoritos
+                            </a>
 
-</li>
+                        </li>
 
-<li class="nav-item">
 
-<a class="btn btn-warning ms-3"
+                        <li class="nav-item ms-lg-3">
 
-href="pages/cadastro.html">
+                            <a
+                                class="btn btn-login"
+                                href="pages/login.html"
+                            >
+                                Entrar
+                            </a>
 
-Cadastre-se
+                        </li>
 
-</a>
+                    </ul>
 
-</li>
+                </div>
 
-</ul>
+            </div>
 
-</div>
+        </nav>
 
-</div>
+    </header>
 
-</nav>
 
-<!-- ===================================================
-HERO
-==================================================== -->
+    <!-- ==========================
+         HERO
+    =========================== -->
 
-<header class="hero">
+    <main>
 
-<div class="container">
+        <section class="hero">
 
-<div class="row align-items-center">
+            <div class="container">
 
-<div class="col-lg-6">
+                <div class="row align-items-center">
 
-<h1>
+                    <!-- TEXTO -->
 
-Adote um amigo.
+                    <div class="col-lg-6">
 
-Mude uma vida. ❤️
+                        <div class="hero-content">
 
-</h1>
+                            <span class="hero-tag">
+                                <i class="bi bi-heart-fill"></i>
+                                Adoção responsável
+                            </span>
 
-<p>
 
-O SOS Patinhas conecta ONGs, voluntários e pessoas
-interessadas em adoção responsável ou na busca por
-animais perdidos.
+                            <h1>
 
-Tudo em um único lugar.
+                                Um lar pode
+                                <span>mudar uma vida.</span>
 
-</p>
+                            </h1>
 
-<div class="mt-4">
 
-<a href="#animais"
+                            <p>
 
-class="btn btn-primary btn-lg">
+                                Encontre animais para adoção ou ajude
+                                a localizar cães e gatos perdidos.
+                                O SOS Patinhas conecta animais,
+                                ONGs e pessoas em uma única plataforma.
 
-Quero Adotar
+                            </p>
 
-</a>
 
-<a href="pages/perdidos.html"
+                            <div class="hero-buttons">
 
-class="btn btn-outline-light btn-lg">
+                                <a
+                                    href="pages/animais.html"
+                                    class="btn btn-primary btn-lg"
+                                >
 
-Animal Perdido
+                                    <i class="bi bi-heart-fill"></i>
 
-</a>
+                                    Quero adotar
 
-</div>
+                                </a>
 
-</div>
 
-<div class="col-lg-6 text-center">
+                                <a
+                                    href="pages/perdidos.html"
+                                    class="btn btn-outline-primary btn-lg"
+                                >
 
-<img
+                                    <i class="bi bi-search"></i>
 
-src="assets/img/banner-dog.png"
+                                    Procurar animal
 
-alt="Cachorro"
+                                </a>
 
-class="img-fluid hero-image">
+                            </div>
 
-</div>
+                        </div>
 
-</div>
+                    </div>
 
-</div>
 
-</header>
+                    <!-- IMAGEM / ILUSTRAÇÃO -->
 
-<!-- ===================================================
-PESQUISA
-==================================================== -->
+                    <div class="col-lg-6">
 
-<section class="search-section">
+                        <div class="hero-visual">
 
-<div class="container">
+                            <div class="hero-circle">
 
-<div class="search-box shadow">
+                                <i class="bi bi-heart-fill"></i>
 
-<h2>
+                            </div>
 
-Encontre seu novo companheiro 🐶
 
-</h2>
+                            <div class="hero-message">
 
-<div class="row mt-4">
+                                <i class="bi bi-house-heart-fill"></i>
 
-<div class="col-md-3">
+                                <div>
 
-<input
+                                    <strong>
+                                        Encontre seu novo amigo
+                                    </strong>
 
-type="text"
+                                    <span>
+                                        Adote com responsabilidade.
+                                    </span>
 
-class="form-control"
+                                </div>
 
-placeholder="Cidade">
+                            </div>
 
-</div>
+                        </div>
 
-<div class="col-md-3">
+                    </div>
 
-<select class="form-select">
+                </div>
 
-<option>Espécie</option>
+            </div>
 
-<option>Cachorro</option>
+        </section>
 
-<option>Gato</option>
 
-</select>
+        <!-- ==========================
+             PESQUISA
+        =========================== -->
 
-</div>
+        <section class="search-section">
 
-<div class="col-md-3">
+            <div class="container">
 
-<select class="form-select">
+                <div class="search-box">
 
-<option>Porte</option>
+                    <div class="search-title">
 
-<option>Pequeno</option>
+                        <span class="section-icon">
+                            <i class="bi bi-search"></i>
+                        </span>
 
-<option>Médio</option>
+                        <div>
 
-<option>Grande</option>
+                            <h2>
+                                Encontre um animal
+                            </h2>
 
-</select>
+                            <p>
+                                Pesquise por cidade, espécie ou porte.
+                            </p>
 
-</div>
+                        </div>
 
-<div class="col-md-3">
+                    </div>
 
-<button
 
-class="btn btn-warning w-100">
+                    <form id="formPesquisa">
 
-Pesquisar
+                        <div class="row g-3">
 
-</button>
 
-</div>
+                            <!-- CIDADE -->
 
-</div>
+                            <div class="col-lg-3">
 
-</div>
+                                <label
+                                    for="cidade"
+                                    class="form-label"
+                                >
+                                    Cidade
+                                </label>
 
-</div>
+                                <input
+                                    type="text"
+                                    id="cidade"
+                                    class="form-control"
+                                    placeholder="Digite a cidade"
+                                >
 
-</section>
+                            </div>
 
-<!-- DAQUI PARA BAIXO CONTINUAREMOS NA PARTE 2 -->
- <!-- ===================================================
-SOBRE O SOS PATINHAS
-==================================================== -->
 
-<section id="sobre" class="py-5">
+                            <!-- ESPÉCIE -->
 
-<div class="container">
+                            <div class="col-lg-3">
 
-<div class="row align-items-center">
+                                <label
+                                    for="especie"
+                                    class="form-label"
+                                >
+                                    Espécie
+                                </label>
 
-<div class="col-lg-6">
+                                <select
+                                    id="especie"
+                                    class="form-select"
+                                >
 
-<img src="assets/img/about-pets.png"
-class="img-fluid rounded-4 shadow"
-alt="Sobre o SOS Patinhas">
+                                    <option value="">
+                                        Todas
+                                    </option>
 
-</div>
+                                    <option value="cachorro">
+                                        Cachorro
+                                    </option>
 
-<div class="col-lg-6">
+                                    <option value="gato">
+                                        Gato
+                                    </option>
 
-<h2 class="section-title">
+                                </select>
 
-Quem Somos?
+                            </div>
 
-</h2>
 
-<p>
+                            <!-- PORTE -->
 
-O <strong>SOS Patinhas</strong> nasceu com o objetivo de
-facilitar a adoção responsável e ajudar a encontrar
-animais perdidos.
+                            <div class="col-lg-3">
 
-Nossa plataforma conecta ONGs, protetores independentes
-e pessoas interessadas em transformar a vida de um animal.
+                                <label
+                                    for="porte"
+                                    class="form-label"
+                                >
+                                    Porte
+                                </label>
 
-</p>
+                                <select
+                                    id="porte"
+                                    class="form-select"
+                                >
 
-<div class="row mt-4">
+                                    <option value="">
+                                        Todos
+                                    </option>
 
-<div class="col-6">
+                                    <option value="pequeno">
+                                        Pequeno
+                                    </option>
 
-<div class="info-card">
+                                    <option value="medio">
+                                        Médio
+                                    </option>
 
-<h3>+350</h3>
+                                    <option value="grande">
+                                        Grande
+                                    </option>
 
-<p>Adoções realizadas</p>
+                                </select>
 
-</div>
+                            </div>
 
-</div>
 
-<div class="col-6">
+                            <!-- BOTÃO -->
 
-<div class="info-card">
+                            <div class="col-lg-3 d-flex align-items-end">
 
-<h3>+120</h3>
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary w-100"
+                                >
 
-<p>Animais encontrados</p>
+                                    <i class="bi bi-search"></i>
 
-</div>
+                                    Pesquisar
 
-</div>
+                                </button>
 
-</div>
+                            </div>
 
-</div>
+                        </div>
 
-</div>
+                    </form>
 
-</div>
+                </div>
 
-</section>
+            </div>
 
-<!-- ===================================================
-ANIMAIS EM DESTAQUE
-==================================================== -->
+        </section>
 
-<section id="animais" class="animais">
 
-<div class="container">
+        <!-- ==========================
+             ADOÇÃO
+        =========================== -->
 
-<div class="text-center mb-5">
+        <section class="section animais-section" id="adocao">
 
-<h2 class="section-title">
+            <div class="container">
 
-Animais em Destaque
+                <div class="section-header">
 
-</h2>
+                    <span class="section-tag">
+                        <i class="bi bi-heart-fill"></i>
+                        Adoção
+                    </span>
 
-<p>
 
-Esses amiguinhos estão esperando por um novo lar ❤️
+                    <h2>
+                        Animais procurando um lar
+                    </h2>
 
-</p>
 
-</div>
+                    <p>
+                        Conheça alguns dos animais disponíveis
+                        para adoção responsável.
+                    </p>
 
-<div class="row">
+                </div>
 
-<!-- CARD 1 -->
 
-<div class="col-lg-3 col-md-6 mb-4">
+                <div class="row g-4">
 
-<div class="card animal-card shadow">
 
-<img src="assets/img/dog1.jpg"
-class="card-img-top">
+                    <!-- THOR -->
 
-<div class="card-body">
+                    <div class="col-md-6 col-lg-4">
 
-<h5>Thor</h5>
+                        <article class="animal-card">
 
-<p>
+                            <div class="animal-photo">
 
-🐶 Cachorro<br>
+                                <div class="photo-placeholder">
 
-📍 Patos de Minas - MG
+                                    <i class="bi bi-image"></i>
 
-</p>
+                                </div>
 
-<span class="badge bg-primary">
 
-Médio Porte
+                                <span class="status status-disponivel">
+                                    Disponível
+                                </span>
 
-</span>
 
-<div class="mt-3">
+                                <button
+                                    class="favorite-button"
+                                    data-animal="Thor"
+                                    aria-label="Favoritar Thor"
+                                >
 
-<a href="#"
+                                    <i class="bi bi-heart"></i>
 
-class="btn btn-primary">
+                                </button>
 
-Ver Perfil
+                            </div>
 
-</a>
 
-<button class="btn btn-outline-danger favorite-btn">
+                            <div class="animal-content">
 
-<i class="bi bi-heart"></i>
+                                <h3>
+                                    Thor
+                                </h3>
 
-</button>
 
-</div>
+                                <p class="animal-description">
 
-</div>
+                                    <i class="bi bi-gender-male"></i>
+                                    Macho
 
-</div>
+                                    <span>•</span>
 
-</div>
+                                    <i class="bi bi-rulers"></i>
+                                    Médio
 
-<!-- CARD 2 -->
+                                </p>
 
-<div class="col-lg-3 col-md-6 mb-4">
 
-<div class="card animal-card shadow">
+                                <p class="animal-location">
 
-<img src="assets/img/cat1.jpg"
-class="card-img-top">
+                                    <i class="bi bi-geo-alt"></i>
 
-<div class="card-body">
+                                    Patos de Minas - MG
 
-<h5>Luna</h5>
+                                </p>
 
-<p>
 
-🐱 Gata<br>
+                                <a
+                                    href="pages/animal-detalhes.html"
+                                    class="btn btn-primary w-100"
+                                >
+                                    Ver detalhes
+                                </a>
 
-📍 Uberlândia - MG
+                            </div>
 
-</p>
+                        </article>
 
-<span class="badge bg-success">
+                    </div>
 
-Pequeno Porte
 
-</span>
+                    <!-- LUNA -->
 
-<div class="mt-3">
+                    <div class="col-md-6 col-lg-4">
 
-<a href="#"
+                        <article class="animal-card">
 
-class="btn btn-primary">
+                            <div class="animal-photo">
 
-Ver Perfil
+                                <div class="photo-placeholder">
 
-</a>
+                                    <i class="bi bi-image"></i>
 
-<button class="btn btn-outline-danger favorite-btn">
+                                </div>
 
-<i class="bi bi-heart"></i>
 
-</button>
+                                <span class="status status-disponivel">
+                                    Disponível
+                                </span>
 
-</div>
 
-</div>
+                                <button
+                                    class="favorite-button"
+                                    data-animal="Luna"
+                                    aria-label="Favoritar Luna"
+                                >
 
-</div>
+                                    <i class="bi bi-heart"></i>
 
-</div>
+                                </button>
 
-<!-- CARD 3 -->
+                            </div>
 
-<div class="col-lg-3 col-md-6 mb-4">
 
-<div class="card animal-card shadow">
+                            <div class="animal-content">
 
-<img src="assets/img/dog2.jpg"
-class="card-img-top">
+                                <h3>
+                                    Luna
+                                </h3>
 
-<div class="card-body">
 
-<h5>Mel</h5>
+                                <p class="animal-description">
 
-<p>
+                                    <i class="bi bi-gender-female"></i>
+                                    Fêmea
 
-🐶 Cachorra<br>
+                                    <span>•</span>
 
-📍 Araxá - MG
+                                    <i class="bi bi-rulers"></i>
+                                    Pequeno
 
-</p>
+                                </p>
 
-<span class="badge bg-warning text-dark">
 
-Grande Porte
+                                <p class="animal-location">
 
-</span>
+                                    <i class="bi bi-geo-alt"></i>
 
-<div class="mt-3">
+                                    Patos de Minas - MG
 
-<a href="#"
+                                </p>
 
-class="btn btn-primary">
 
-Ver Perfil
+                                <a
+                                    href="pages/animal-detalhes.html"
+                                    class="btn btn-primary w-100"
+                                >
+                                    Ver detalhes
+                                </a>
 
-</a>
+                            </div>
 
-<button class="btn btn-outline-danger favorite-btn">
+                        </article>
 
-<i class="bi bi-heart"></i>
+                    </div>
 
-</button>
 
-</div>
+                    <!-- MAX -->
 
-</div>
+                    <div class="col-md-6 col-lg-4">
 
-</div>
+                        <article class="animal-card">
 
-</div>
+                            <div class="animal-photo">
 
-<!-- CARD 4 -->
+                                <div class="photo-placeholder">
 
-<div class="col-lg-3 col-md-6 mb-4">
+                                    <i class="bi bi-image"></i>
 
-<div class="card animal-card shadow">
+                                </div>
 
-<img src="assets/img/cat2.jpg"
-class="card-img-top">
 
-<div class="card-body">
+                                <span class="status status-disponivel">
+                                    Disponível
+                                </span>
 
-<h5>Simba</h5>
 
-<p>
+                                <button
+                                    class="favorite-button"
+                                    data-animal="Max"
+                                    aria-label="Favoritar Max"
+                                >
 
-🐱 Gato<br>
+                                    <i class="bi bi-heart"></i>
 
-📍 Patrocínio - MG
+                                </button>
 
-</p>
+                            </div>
 
-<span class="badge bg-info">
 
-Filhote
+                            <div class="animal-content">
 
-</span>
+                                <h3>
+                                    Max
+                                </h3>
 
-<div class="mt-3">
 
-<a href="#"
+                                <p class="animal-description">
 
-class="btn btn-primary">
+                                    <i class="bi bi-gender-male"></i>
+                                    Macho
 
-Ver Perfil
+                                    <span>•</span>
 
-</a>
+                                    <i class="bi bi-rulers"></i>
+                                    Grande
 
-<button class="btn btn-outline-danger favorite-btn">
+                                </p>
 
-<i class="bi bi-heart"></i>
 
-</button>
+                                <p class="animal-location">
 
-</div>
+                                    <i class="bi bi-geo-alt"></i>
 
-</div>
+                                    Patos de Minas - MG
 
-</div>
+                                </p>
 
-</div>
 
-</div>
+                                <a
+                                    href="pages/animal-detalhes.html"
+                                    class="btn btn-primary w-100"
+                                >
+                                    Ver detalhes
+                                </a>
 
-<div class="text-center mt-5">
+                            </div>
 
-<a href="pages/animais.html"
+                        </article>
 
-class="btn btn-lg btn-warning">
+                    </div>
 
-Ver Todos os Animais
+                </div>
 
-</a>
 
-</div>
+                <div class="section-button">
 
-</div>
+                    <a
+                        href="pages/animais.html"
+                        class="btn btn-outline-primary"
+                    >
 
-</section>
+                        Ver todos os animais
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================
+             ANIMAIS PERDIDOS
+        =========================== -->
+
+        <section class="section lost-section" id="perdidos">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-tag">
+                        <i class="bi bi-search"></i>
+                        Animais perdidos
+                    </span>
+
+
+                    <h2>
+                        Ajude um animal a voltar para casa
+                    </h2>
+
+
+                    <p>
+                        Confira alguns animais que estão sendo
+                        procurados por suas famílias.
+                    </p>
+
+                </div>
+
+
+                <div class="row g-4">
+
+
+                    <!-- MEL -->
+
+                    <div class="col-md-6 col-lg-4">
+
+                        <article class="lost-card">
+
+                            <div class="lost-photo">
+
+                                <div class="photo-placeholder">
+
+                                    <i class="bi bi-image"></i>
+
+                                </div>
+
+
+                                <span class="status status-perdido">
+                                    Perdido
+                                </span>
+
+                            </div>
+
+
+                            <div class="lost-content">
+
+                                <h3>
+                                    Mel
+                                </h3>
+
+
+                                <p>
+
+                                    <i class="bi bi-geo-alt"></i>
+
+                                    Centro
+
+                                </p>
+
+
+                                <p>
+
+                                    <i class="bi bi-calendar3"></i>
+
+                                    Último registro: 12/08/2026
+
+                                </p>
+
+
+                                <a
+                                    href="pages/perdido-detalhes.html"
+                                    class="btn btn-outline-primary w-100"
+                                >
+                                    Ver informações
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <!-- NINA -->
+
+                    <div class="col-md-6 col-lg-4">
+
+                        <article class="lost-card">
+
+                            <div class="lost-photo">
+
+                                <div class="photo-placeholder">
+
+                                    <i class="bi bi-image"></i>
+
+                                </div>
+
+
+                                <span class="status status-perdido">
+                                    Perdido
+                                </span>
+
+                            </div>
+
+
+                            <div class="lost-content">
+
+                                <h3>
+                                    Nina
+                                </h3>
+
+
+                                <p>
+
+                                    <i class="bi bi-geo-alt"></i>
+
+                                    Bairro Jardim
+
+                                </p>
+
+
+                                <p>
+
+                                    <i class="bi bi-calendar3"></i>
+
+                                    Último registro: 10/08/2026
+
+                                </p>
+
+
+                                <a
+                                    href="pages/perdido-detalhes.html"
+                                    class="btn btn-outline-primary w-100"
+                                >
+                                    Ver informações
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <!-- BOB -->
+
+                    <div class="col-md-6 col-lg-4">
+
+                        <article class="lost-card">
+
+                            <div class="lost-photo">
+
+                                <div class="photo-placeholder">
+
+                                    <i class="bi bi-image"></i>
+
+                                </div>
+
+
+                                <span class="status status-perdido">
+                                    Perdido
+                                </span>
+
+                            </div>
+
+
+                            <div class="lost-content">
+
+                                <h3>
+                                    Bob
+                                </h3>
+
+
+                                <p>
+
+                                    <i class="bi bi-geo-alt"></i>
+
+                                    Centro
+
+                                </p>
+
+
+                                <p>
+
+                                    <i class="bi bi-calendar3"></i>
+
+                                    Último registro: 08/08/2026
+
+                                </p>
+
+
+                                <a
+                                    href="pages/perdido-detalhes.html"
+                                    class="btn btn-outline-primary w-100"
+                                >
+                                    Ver informações
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+
+                <div class="section-button">
+
+                    <a
+                        href="pages/perdidos.html"
+                        class="btn btn-outline-primary"
+                    >
+
+                        Ver todos os perdidos
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================
+             ESTATÍSTICAS
+        =========================== -->
+
+        <section class="stats-section">
+
+            <div class="container">
+
+                <div class="row g-4">
+
+
+                    <div class="col-6 col-lg-3">
+
+                        <div class="stat-card">
+
+                            <i class="bi bi-heart-fill"></i>
+
+                            <strong>
+                                120
+                            </strong>
+
+                            <span>
+                                Animais cadastrados
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-6 col-lg-3">
+
+                        <div class="stat-card">
+
+                            <i class="bi bi-house-heart-fill"></i>
+
+                            <strong>
+                                48
+                            </strong>
+
+                            <span>
+                                Animais adotados
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-6 col-lg-3">
+
+                        <div class="stat-card">
+
+                            <i class="bi bi-search-heart"></i>
+
+                            <strong>
+                                15
+                            </strong>
+
+                            <span>
+                                Animais encontrados
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-6 col-lg-3">
+
+                        <div class="stat-card">
+
+                            <i class="bi bi-building"></i>
+
+                            <strong>
+                                12
+                            </strong>
+
+                            <span>
+                                ONGs cadastradas
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================
+             ONGS
+        =========================== -->
+
+        <section class="section ongs-section" id="ongs">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-tag">
+                        <i class="bi bi-building"></i>
+                        ONGs
+                    </span>
+
+
+                    <h2>
+                        Organizações que fazem a diferença
+                    </h2>
+
+
+                    <p>
+                        Conheça as ONGs cadastradas no SOS Patinhas.
+                    </p>
+
+                </div>
+
+
+                <div class="row g-4">
+
+
+                    <div class="col-md-6 col-lg-4">
+
+                        <article class="ong-card">
+
+                            <div class="ong-logo">
+                                <i class="bi bi-heart-fill"></i>
+                            </div>
+
+
+                            <h3>
+                                Patinhas do Bem
+                            </h3>
+
+
+                            <p>
+                                Organização dedicada ao resgate,
+                                cuidado e adoção de animais.
+                            </p>
+
+
+                            <a
+                                href="pages/ong-detalhes.html"
+                                class="btn btn-primary"
+                            >
+                                Conhecer ONG
+                            </a>
+
+                        </article>
+
+                    </div>
+
+
+                    <div class="col-md-6 col-lg-4">
+
+                        <article class="ong-card">
+
+                            <div class="ong-logo">
+                                <i class="bi bi-house-heart-fill"></i>
+                            </div>
+
+
+                            <h3>
+                                Amigos dos Animais
+                            </h3>
+
+
+                            <p>
+                                Instituição voltada à proteção
+                                e adoção responsável.
+                            </p>
+
+
+                            <a
+                                href="pages/ong-detalhes.html"
+                                class="btn btn-primary"
+                            >
+                                Conhecer ONG
+                            </a>
+
+                        </article>
+
+                    </div>
+
+
+                    <div class="col-md-6 col-lg-4">
+
+                        <article class="ong-card">
+
+                            <div class="ong-logo">
+                                <i class="bi bi-shield-heart-fill"></i>
+                            </div>
+
+
+                            <h3>
+                                SOS Animal
+                            </h3>
+
+
+                            <p>
+                                Projeto dedicado ao acolhimento
+                                e busca de novos lares.
+                            </p>
+
+
+                            <a
+                                href="pages/ong-detalhes.html"
+                                class="btn btn-primary"
+                            >
+                                Conhecer ONG
+                            </a>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+
+                <div class="section-button">
+
+                    <a
+                        href="pages/ongs.html"
+                        class="btn btn-outline-primary"
+                    >
+
+                        Ver todas as ONGs
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================
+             SOBRE
+        =========================== -->
+
+        <section class="section about-section" id="sobre">
+
+            <div class="container">
+
+                <div class="row align-items-center g-5">
+
+                    <div class="col-lg-6">
+
+                        <span class="section-tag">
+                            <i class="bi bi-paw"></i>
+                            Sobre o projeto
+                        </span>
+
+
+                        <h2>
+                            Tecnologia para ajudar
+                            quem precisa.
+                        </h2>
+
+
+                        <p>
+                            O SOS Patinhas é um sistema de gerenciamento
+                            de adoção e busca de animais perdidos.
+                        </p>
+
+
+                        <p>
+                            A proposta é centralizar informações de animais
+                            e ONGs, facilitando a divulgação, a localização
+                            e o processo de adoção responsável.
+                        </p>
+
+
+                        <a
+                            href="#"
+                            class="btn btn-primary"
+                        >
+                            Saiba mais
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+
+                    <div class="col-lg-6">
+
+                        <div class="about-grid">
+
+
+                            <div class="about-card">
+
+                                <i class="bi bi-heart-fill"></i>
+
+                                <h3>
+                                    Adoção
+                                </h3>
+
+                                <p>
+                                    Facilitar a busca por novos lares.
+                                </p>
+
+                            </div>
+
+
+                            <div class="about-card">
+
+                                <i class="bi bi-search-heart"></i>
+
+                                <h3>
+                                    Busca
+                                </h3>
+
+                                <p>
+                                    Ajudar animais perdidos.
+                                </p>
+
+                            </div>
+
+
+                            <div class="about-card">
+
+                                <i class="bi bi-building"></i>
+
+                                <h3>
+                                    ONGs
+                                </h3>
+
+                                <p>
+                                    Organizar os cadastros.
+                                </p>
+
+                            </div>
+
+
+                            <div class="about-card">
+
+                                <i class="bi bi-globe2"></i>
+
+                                <h3>
+                                    Divulgação
+                                </h3>
+
+                                <p>
+                                    Centralizar informações.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==========================
+         FOOTER
+    =========================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="row g-4">
+
+
+                <div class="col-lg-5">
+
+                    <a
+                        href="index.html"
+                        class="footer-logo"
+                    >
+
+                        <i class="bi bi-heart-fill"></i>
+
+                        SOS Patinhas
+
+                    </a>
+
+
+                    <p>
+                        Sistema de gerenciamento de adoção
+                        e busca de animais perdidos.
+                    </p>
+
+                </div>
+
+
+                <div class="col-6 col-lg-2">
+
+                    <h4>
+                        Sistema
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            <a href="pages/animais.html">
+                                Animais
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="pages/perdidos.html">
+                                Perdidos
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="pages/ongs.html">
+                                ONGs
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="col-6 col-lg-2">
+
+                    <h4>
+                        Usuário
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            <a href="pages/login.html">
+                                Entrar
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="pages/cadastro.html">
+                                Cadastro
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="pages/favoritos.html">
+                                Favoritos
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="col-lg-3">
+
+                    <h4>
+                        Redes sociais
+                    </h4>
+
+
+                    <div class="social-links">
+
+                        <a href="#" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+
+
+                        <a href="#" aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+
+
+                        <a href="#" aria-label="WhatsApp">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <hr>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 SOS Patinhas. Projeto de TCC.
+                </p>
+
+                <p>
+                    Desenvolvido para promover a adoção responsável.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Bootstrap JavaScript -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+    <!-- JavaScript do projeto -->
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
